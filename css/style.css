@@ -1,0 +1,852 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Spectral', serif;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff;    
+    font-family: 'Spectral', serif;
+}
+
+/* Navigation Styles */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    backdrop-filter: blur(10px); /* Add a blur effect to the background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a box shadow for extra depth */
+   
+}
+
+nav img {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav li {
+    margin-left: 20px;
+    padding: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+nav a:hover {
+    background-color: #615b5b;
+    color: #333;
+    border-radius: 8%;
+    transition: 0.4s;
+}
+
+.home-link{
+    display: none;
+}
+
+.hamburger {
+    display: none; /* Hide the hamburger by default */
+    cursor: pointer;
+
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px auto;
+}
+
+/* Styles for mobile view */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column; /* Stack the navigation items vertically on mobile */
+        align-items: center; /* Center align navigation items horizontally on mobile */        
+        z-index: 100;
+        backdrop-filter: blur(10px); /* Add a blur effect to the background */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a box shadow for extra depth */
+       
+        
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger on mobile */
+        position: fixed; /* Position it as a fixed element */        
+        z-index: 101; /* Setting a higher z-index to ensure it appears above the menu */
+        cursor: pointer;
+        backdrop-filter: blur(10px); /* Add a blur effect to the background */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a box shadow for extra depth */
+    }  
+  
+    .menu {
+        display: none; /* Hide the menu by default on mobile */
+    }
+
+    .menu.active {
+        display: flex; /* Show the menu when active */
+        flex-direction: column; /* Stack the navigation items vertically in the menu */
+        position: fixed; 
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #242323;
+        padding: 20px;
+        z-index: 1;
+        transition: transform 0.3s ease; 
+        /* Center the menu items vertically and horizontally */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-container {
+        display: none; /* Hide the logo by default on mobile */
+    }
+
+      
+    .home-link{
+        display: block;
+    }
+    .nav ul {
+        display: none; /* Hide the menu items by default */
+        flex-direction: column; /* Stack the navigation items vertically in the menu */
+        align-items: center;
+        position: absolute;
+        top: 70px; /* Adjust the top position */
+        right: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Make the menu background slightly transparent */
+    }
+
+    .nav li {
+        margin: 10px 0;
+    }
+
+    .menu.active ul {
+        display: flex; /* Show the menu when active */
+    }
+
+    .logo-container {
+        display: none; /* Hide the logo by default on mobile */
+    }
+
+    .home-link {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .home-link:hover {
+        color: #333;
+        border-radius: 8%;
+    }
+   
+
+     .form-Btn {
+        font-size: 16px; /* Slightly increase font size for better visibility */
+        padding: 12px 20px; /* Increase padding for a more comfortable tap area */
+        width: 100%;
+        max-width: 200px; /* Limit the button width for better responsiveness */
+        margin: 10px auto; /* Center align the button on mobile */
+    }
+
+    .contact-input, input
+     {
+        
+        max-width: max-content;
+      
+    }
+    
+
+    
+    
+    
+}
+
+
+
+
+
+
+/* Hero Styles */
+
+.hero-container {
+    height: 100vh;
+}
+
+.img-bg {
+    width: 50%;
+    background-image: url(../images/linkin-removebg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 80px;
+}
+
+/* Card Styles */
+.card {
+
+    display: flex;
+    margin: 150px auto;
+    max-width: 440px;
+    color: #ffffff;
+    padding: 50px;
+    border-radius: 40px;
+    border: 2px solid rgb(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0, 2);
+    filter: drop-shadow(0 0.3rem 0.75rem rgba(107, 155, 115, 0.589));
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+
+}
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-social-1,
+.card-social-2,
+.card-social-3,
+.card-social-4 {
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.445);
+    background: rgba(255, 255, 255, 0, 2);
+    filter: drop-shadow(0 0.3rem 0.75rem rgba(189, 207, 192, 0.589));
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+}
+
+.card-social-1,
+.card-social-2,
+.card-social-3
+ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-social-1 .fa-instagram, .fa-github, .fa-linkedin {
+    flex: 1;
+    font-size: 95px; 
+  }
+  
+
+.card-social-1:hover .fa-instagram {
+    background-color: rgba(187, 18, 187, 0.836);
+    border-radius: 20px;
+
+  }
+  
+  .card-social-2:hover .fa-linkedin {
+    background-color: blue;
+    border-radius:10px;
+  }
+  
+  .card-social-3:hover .fa-github {
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  .world-icon {
+    color: #cccccc6c;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-60%, 50%);
+    font-size: 30px;
+}
+
+    .bassed{
+    color: #535252c4;
+    font-family: 'Romanesco', cursive;
+}
+  
+
+
+
+/* About Section Styles */
+.about-section {
+    height: 100vh;
+
+}
+.about-img {
+    max-width: 100%;
+    height: 20vh;
+    background-image: url(../images/linkin-removebg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-card1 {
+    background: rgba(122, 120, 120, 0.253);
+    border: 2px solid rgba(175, 175, 175, 0.575);
+    border-radius: 10px;
+}
+
+.img-card {
+    background: rgba(5, 5, 5, 0.938);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+
+
+/* text-about-section */
+.text-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.about-card {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+
+    text-align: center;
+}
+
+
+
+.name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+@media (max-width: 544px){
+    .card {
+        display: flex;
+        margin: 150px auto;
+        max-width: 440px;
+        color: #ffffff;
+        padding: 15px;
+        border-radius: 40px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0, 2);
+        filter: drop-shadow(0 0.3rem 0.75rem rgba(107, 155, 115, 0.589));
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(50px);
+    }
+    .card p {
+        margin: 1px 5px;
+        font-size: larger;
+    }
+    .img-bg {
+        width: 90%;
+        background-image: url(../images/linkin-removebg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 80px;
+    }
+    .cards-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-social-4{
+        height: 40px;
+        width: 30%;
+        margin-left: 5px;
+        display: flex; /* Add this to make the icon align properly */
+        justify-content: center; /* Add this to make the icon align properly */
+        align-items: center; /* Add this to make the icon align properly */
+        position: relative; /* Add this to position the icon correctly */
+    }
+
+    
+
+    .card-social-1,
+    .card-social-2,
+    .card-social-3
+    {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-social-1 .fa-instagram, .fa-github, .fa-linkedin {
+    flex: 1;
+    font-size: 35px; 
+  }
+  
+
+    .card-social-1:hover .fa-instagram {
+    background-color: rgba(187, 18, 187, 0.836);
+    border-radius: 20px;
+
+  }
+  
+  .card-social-2:hover .fa-linkedin {
+    background-color: blue;
+    border-radius:10px;
+  }
+  
+  .card-social-3:hover .fa-github {
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  .world-icon {
+    color: #cccccc6c;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transform: translate(-60%, 0%);
+    font-size: 15px;
+}
+
+    .bassed{
+    color: #535252c4;
+    font-family: 'Romanesco', cursive;
+}
+
+.info-card{
+    max-width: 100%;
+    font-size: smaller;
+}
+
+
+
+
+
+
+
+/* About Section Styles */
+.about-section {
+    height: 100vh;
+
+}
+
+.about-img {
+    max-width: 100%;
+    background-image: url(../images/linkin-removebg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.img-card1 {
+    width: 100%;
+    background: rgba(122, 120, 120, 0.253);
+    border: 2px solid rgba(175, 175, 175, 0.575);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.img-card {
+    width: 100%; 
+    background: rgba(5, 5, 5, 0.938);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    
+}
+
+
+
+/* text-about-section */
+.text-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.about-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+
+    text-align: center;
+}
+
+
+
+.name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+  
+}
+
+/* work-section */
+
+.work-section {
+    height: 100vh;
+}
+
+.work-c {
+    width: auto;
+    height: 30%;
+    max-width: 440px;
+
+}
+
+.chrome-window {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(10deg);
+    background-color: #353434;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chrome-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.chrome-controls {
+    margin-left: 8px;
+}
+
+.chrome-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.chrome-dot.red {
+    background-color: rgb(240, 88, 88);
+}
+
+.chrome-dot.yellow {
+    background-color: rgb(245, 245, 88);
+}
+
+.chrome-dot.green {
+    background-color: rgb(105, 241, 105);
+}
+
+.chrome-s {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chrome-content {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.project-image {
+    max-width: 100%;
+    max-height: 100%;
+    padding-bottom: 45%;
+   
+    background-image: url(../images/shoppingcart.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.search-bar {
+    width: 100px;
+    height: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.arrows {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.arrow-left,
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.arrow-left {
+    border-width: 5px 7px 5px 0;
+    border-color: transparent #333 transparent transparent;
+    margin-right: 5px;
+}
+
+.arrow-right {
+    border-width: 5px 0 5px 7px;
+    border-color: transparent transparent transparent #ccc7c7;
+}
+
+.chrome-search {
+    width: 150px;
+    height: 14px;
+    padding: 2px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1efef;
+    font-size: 14px;
+}
+
+
+.project-info {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.code-button:hover {
+    background-color: #dddddd;
+}
+
+
+.website-button,.code-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.website-button:hover {
+    background-color: #dddddd;
+}
+
+.text-center-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Contact Section Styles */
+
+.contact-section {
+    height: 100vh;
+}
+
+
+
+
+.hide {
+    /* visibility: hidden; */
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.tilt {
+    transition: transform 0.5s ease;
+  }
+
+
+
+
+/* Skills Section Styles */
+.skills-section {
+    height: 100vh;
+}
+
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.cardsContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 20.33%;
+   
+}
+
+.cards {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+    cursor: pointer;
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+.cardsContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 59, 153, 0.74);    
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s;
+}
+
+.cardsContainer:hover::before {
+    opacity: 1;
+}
+
+.cardsContainer:hover .cards {
+    transform: scale(1.1);
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
+}
+
+
+
+
+.contact-container {
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container h3 {
+    margin-top: 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+    background-color: #33333367;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 957px ;
+    height: 50px;
+}
+
+.form-container textarea {
+    height: 100px;
+}
+
+.form-container .form-Btn {
+    background-color: #fff;
+    color: #222;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form-container .form-Btn:hover {
+    background-color: #5aa74e85;
+}
