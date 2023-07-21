@@ -264,6 +264,7 @@ nav a:hover {
   .card-social-1 .fa-instagram, .fa-github, .fa-linkedin {
     flex: 1;
     font-size: 95px; 
+    color: #000000;
   }
   
 
