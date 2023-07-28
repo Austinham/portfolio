@@ -202,7 +202,9 @@ nav a:hover {
 
 /* Hero Styles */
 
-
+.hero-container{
+    margin-bottom: 100px;
+}
 .img-bg {
     width: 50%;
     background-image: url(../images/linkin-removebg.png);
@@ -459,8 +461,9 @@ nav a:hover {
     max-width: 100%;
     font-size: smaller;
 }
-
-
+.hero-container{
+    margin-bottom: 100px;
+}
 
 
 
@@ -468,7 +471,7 @@ nav a:hover {
 
 /* About Section Styles */
 .about-section {
-    
+  height: 100vh;
 
 }
 
