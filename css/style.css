@@ -202,9 +202,6 @@ nav a:hover {
 
 /* Hero Styles */
 
-.hero-container {
-    height: 100vh;
-}
 
 .img-bg {
     width: 50%;
@@ -377,18 +374,23 @@ nav a:hover {
         filter: drop-shadow(0 0.3rem 0.75rem rgba(107, 155, 115, 0.589));
         box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(50px);
+        min-height: 3em;
+        justify-content: center;
+        align-items: center;
     }
     .card p {
         margin: 1px 5px;
-        font-size: larger;
+        font-size: 2.8vw;
+        
     }
     .img-bg {
-        width: 90%;
+        width: 20%;
         background-image: url(../images/linkin-removebg.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 80px;
+        height: 50px;
     }
     .cards-container {
         display: flex;
@@ -466,7 +468,7 @@ nav a:hover {
 
 /* About Section Styles */
 .about-section {
-    height: 100vh;
+    
 
 }
 
