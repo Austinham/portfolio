@@ -470,10 +470,7 @@ nav a:hover {
 
 
 /* About Section Styles */
-.about-section {
-  height: 100vh;
 
-}
 
 .about-img {
     max-width: 100%;
@@ -510,6 +507,7 @@ nav a:hover {
 
 
 /* text-about-section */
+
 .text-center {
     display: flex;
     align-items: center;
@@ -524,10 +522,12 @@ nav a:hover {
     justify-content: center;
     flex-direction: column;
     padding: 15px;
-
     text-align: center;
 }
 
+.about-card p {
+    padding-right: 1.2em;
+}
 
 
 .name {
